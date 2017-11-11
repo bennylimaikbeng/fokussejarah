@@ -1,0 +1,88 @@
+
+      <div style="overflow-y:auto;">
+        <div ng-swipe-left="change('left')" ng-swipe-right="change('right')" style="background: url(img/{{myBackground}}.jpg);background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position:center; min-height: 100%; margin: 0; background-repeat: no-repeat; background-position:center;">
+          
+          <div class="container">
+            <div ng-if="!thing.id && loadingError == false" class="loading">Loading notes</div>
+            <div ng-if="thing.category" class="category">{{thing.category}} <span ng-if="thing.hashtag">{{thing.hashtag}}</span><span><a ng-if="thing.url" ng-href="{{thing.url}}" class="seemore ion-earth" onclick="window.open(this.href, '_system', 'location=no'); return false;"> Link</a></span></div>
+            <div ng-if="thing.title" class="thingtitle">{{thing.title}}</div>
+            <div>
+              <div ng-if="thing.description" class="description">{{thing.description}}</div>
+
+              <div ng-if="thing.detail" class="detail ion-arrow-right-b" ng-class="{meaning: thing.wrong}" ng-repeat="detail in thing.detail"> {{detail}}</div>
+              <div ng-if="thing.structured && showInputBox == 'false'" class="detail ion-arrow-right-b" ng-repeat="structured in thing.structured"> {{structured}}</div>
+
+              <div ng-if="thing.correct" class="correct ion-ios-checkmark"> {{thing.correct}}</div>
+              <div ng-if="thing.wrong" class="wrong ion-ios-close"> {{thing.wrong}}</div>
+              <div ng-if="thing.correct2" class="correct ion-ios-checkmark"> {{thing.correct2}}</div>
+              <div ng-if="thing.wrong2" class="wrong ion-ios-close"> {{thing.wrong2}}</div>
+
+              <div ng-if="thing.example" class="example ion-compose"> {{thing.example}}</div>
+              <div ng-if="thing.moreexample && showInputBox == 'true'">
+                <button class="button button-block button-balanced button-outline" ng-click="fillStructured(thing.id)">Show {{thing.moreexample.length}} more example<span ng-if="thing.moreexample.length>1">s</span></button>
+              </div>
+
+              <div ng-if="thing.elaboration" class="elaboration ion-pricetag"> {{thing.elaboration}}</div>
+              <div ng-if="thing.image"><img class="image" ng-src="{{thing.image}}"></div>
+              
+              <div ng-if="thing.answer && showInputBox == 'true'">
+                <input type="text" ng-model="userAnswer" placeholder="{{answerPlaceholder}}">
+                <button class="button button-block button-assertive button-outline" ng-click="submitAnswer(userAnswer); userAnswer = null">Submit answer</button>
+                <button class="button button-block button-balanced button-outline" ng-click="fillAnswer(thing.id)">Get answer</button>
+              </div>
+
+              <div ng-if="thing.answer && showInputBox == 'false'" class="correct ion-ios-checkmark"> {{thing.answer}}</div>
+              <div ng-if="thing.remark" class="remark ion-information-circled"> {{thing.remark}}</div>
+              <div ng-if="thing.moreexample && showInputBox == 'false'" class="example ion-compose" ng-repeat="moreexample in thing.moreexample"> {{moreexample}}</div>
+
+              <div ng-if="thing.structured && showInputBox == 'true'">
+                <button class="button button-block button-balanced button-outline" ng-click="fillStructured(thing.id)">Get answer</button>
+              </div>
+            
+              <div class="signature" ng-if="noscreenshot==false">
+                <span class="ion-social-twitter"></span> <span class="ion-social-instagram"> <span class="ion-social-facebook"></span> <span>@fokussejarah</span>
+              </div>
+            </div>
+          </div>
+
+
+      <div class="row float-button hide-on-keyboard-open" ng-if="noscreenshot==true">
+
+        <button ng-if="hasWhatsApp == 'true'" class="button-icon" ng-click="screenshot('WhatsApp',thing.title + ' ' + thing.hashtag + ' ' + thing.item,thing.url)">
+          <i class="ion-social-whatsapp iconsize" style="color:#64D448"></i>
+        </button>  
+
+        <button ng-if="hasTwitter == 'true'" class="button-icon" ng-click="screenshot('Twitter',thing.title + ' ' + thing.hashtag + ' ' + thing.item,thing.url)">
+          <i class="ion-social-twitter iconsize" style="color:#00aced"></i>
+        </button>  
+
+        <button ng-if="hasFacebook == 'true'" class="button-icon" ng-click="screenshot('Facebook',thing.title + ' ' + thing.hashtag + ' ' + thing.item,thing.url)">
+          <i class="ion-social-facebook iconsize" style="color:#007bb5"></i>
+        </button>  
+
+        <button ng-if="hasInstagram == 'true'" class="button-icon" ng-click="screenshot('Instagram',thing.title + ' ' + thing.hashtag + ' ' + thing.item,thing.url)">
+          <i class="ion-social-instagram iconsize" style="color:#e95950"></i>
+        </button>          
+
+        <button class="button-icon" ng-click="category()">
+          <i class="ion-android-list iconsize" style="color:#ff0084"></i>
+        </button>  
+
+        <button class="button-icon" ng-click="search()">
+          <i class="ion-search iconsize" style="color:#ffffff"></i>
+        </button>  
+
+        <button class="button-icon" ng-click="background()">
+          <i class="ion-easel iconsize" style="color:#00e461"></i>
+        </button>              
+
+      </div>
+
+      <div class="page-number hide-on-keyboard-open" ng-if="noscreenshot==true">
+        <span ng-if="swipeTutorial == 'false'">Swipe left or right to change page</span>
+        <span ng-if="swipeTutorial == 'true'">{{pageNumber}} / {{things.length}}</span>
+      </div>
+
+    </div>
+
+  </div>

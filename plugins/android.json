@@ -1,0 +1,79 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.darktalker.cordova.screenshot": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-admob": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-appavailability": {
+            "PACKAGE_NAME": "com.spm.fokussejarah"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.spm.fokussejarah"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.spm.fokussejarah"
+        },
+        "cordova-plugin-apprate": {
+            "PACKAGE_NAME": "com.spm.fokussejarah"
+        },
+        "cordova-instagram-plugin": {
+            "PACKAGE_NAME": "com.spm.fokussejarah"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-admobsdk": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.spm.fokussejarah"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.spm.fokussejarah"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.spm.fokussejarah"
+        },
+        "com.verso.cordova.clipboard": {
+            "PACKAGE_NAME": "com.spm.fokussejarah"
+        }
+    }
+}
